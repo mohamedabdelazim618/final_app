@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="حصن المسلم - أذكار من الكتاب والسنة">
+  <meta name="theme-color" content="#1B5E20">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="حصن المسلم">
+  <title>حصن المسلم</title>
+  <link rel="manifest" href="manifest.json">
+  <style>
+    body { margin: 0; background: #1B5E20; }
+    #splash {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #1B5E20 0%, #0D2B0D 100%);
+      font-family: Arial, sans-serif; color: white; gap: 16px;
+    }
+    #splash .symbol { font-size: 64px; animation: pulse 1.4s ease-in-out infinite; }
+    #splash h1 { margin: 0; font-size: 28px; }
+    #splash p  { margin: 0; font-size: 14px; opacity: 0.65; }
+    .dots span {
+      display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+      background: #D4AF37; margin: 0 4px;
+      animation: bounce 0.75s ease infinite alternate;
+    }
+    .dots span:nth-child(2) { animation-delay: 0.15s; }
+    .dots span:nth-child(3) { animation-delay: 0.30s; }
+    @keyframes pulse  { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.1);opacity:.8} }
+    @keyframes bounce { from{transform:translateY(0);opacity:.4} to{transform:translateY(-10px);opacity:1} }
+  </style>
+</head>
+<body>
+  <div id="splash">
+    <div class="symbol">&#9770;</div>
+    <h1>حصن المسلم</h1>
+    <p>من أذكار الكتاب والسنة</p>
+    <div class="dots"><span></span><span></span><span></span></div>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var s = document.getElementById('splash');
+      if (s) s.style.display = 'none';
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
