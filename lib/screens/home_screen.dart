@@ -81,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     .animate()
                     .scale(duration: 600.ms, curve: Curves.elasticOut),
                 const SizedBox(height: 6),
-                Text('حصن المسلم',
+                Text('أذكار اليوم والليلة',
                         style: GoogleFonts.scheherazadeNew(
                             fontSize: 28,
                             fontWeight: FontWeight.bold,

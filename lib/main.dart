@@ -25,7 +25,7 @@ class AthkarApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = context.watch<AppState>();
     return MaterialApp(
-      title: 'حصن المسلم',
+      title: 'أذكار اليوم والليلة',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
@@ -50,11 +50,13 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   void initState() {
     super.initState();
-    _ctrl = AnimationController(vsync: this, duration: const Duration(milliseconds: 1200));
-    _fadeAnim = Tween<double>(begin: 0, end: 1).animate(
-        CurvedAnimation(parent: _ctrl, curve: const Interval(0, 0.6, curve: Curves.easeIn)));
-    _scaleAnim = Tween<double>(begin: 0.7, end: 1).animate(
-        CurvedAnimation(parent: _ctrl, curve: const Interval(0, 0.6, curve: Curves.elasticOut)));
+    _ctrl = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 1200));
+    _fadeAnim = Tween<double>(begin: 0, end: 1).animate(CurvedAnimation(
+        parent: _ctrl, curve: const Interval(0, 0.6, curve: Curves.easeIn)));
+    _scaleAnim = Tween<double>(begin: 0.7, end: 1).animate(CurvedAnimation(
+        parent: _ctrl,
+        curve: const Interval(0, 0.6, curve: Curves.elasticOut)));
     _ctrl.forward();
     Future.delayed(const Duration(seconds: 2), () {
       if (mounted) {
@@ -69,7 +71,10 @@ class _SplashScreenState extends State<SplashScreen>
   }
 
   @override
-  void dispose() { _ctrl.dispose(); super.dispose(); }
+  void dispose() {
+    _ctrl.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -93,19 +98,22 @@ class _SplashScreenState extends State<SplashScreen>
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Container(
-                      width: 120, height: 120,
+                      width: 120,
+                      height: 120,
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: Colors.white.withOpacity(0.1),
-                        border: Border.all(color: AppTheme.accentGold, width: 2),
+                        border:
+                            Border.all(color: AppTheme.accentGold, width: 2),
                       ),
                       child: const Center(
                         child: Text('☪',
-                            style: TextStyle(fontSize: 60, color: AppTheme.accentGold)),
+                            style: TextStyle(
+                                fontSize: 60, color: AppTheme.accentGold)),
                       ),
                     ),
                     const SizedBox(height: 24),
-                    const Text('حصن المسلم',
+                    const Text('أذكار اليوم والليلة',
                         style: TextStyle(
                           fontFamily: 'Scheherazade New',
                           fontSize: 36,
@@ -121,7 +129,8 @@ class _SplashScreenState extends State<SplashScreen>
                         )),
                     const SizedBox(height: 48),
                     const SizedBox(
-                      width: 40, height: 40,
+                      width: 40,
+                      height: 40,
                       child: CircularProgressIndicator(
                         strokeWidth: 2,
                         valueColor: AlwaysStoppedAnimation(AppTheme.accentGold),
